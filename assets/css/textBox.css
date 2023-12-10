@@ -220,8 +220,36 @@
 
          flex-direction: column;
      }
+
+     .socialMedia li{
+
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: auto;
+    margin: auto;
+
+}
+
+.socialMedia a{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.socialMedia p{
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
      
- }
+}
 
 .Personal{
 
