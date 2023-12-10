@@ -1,0 +1,82 @@
+.acordeonMore{
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    /*border: 1px solid;
+    border-radius: 1rem;
+    margin:1rem 0;
+    */
+    transition: .25s;
+}
+
+/*.acordeonMore.open,
+.acordeonMore:hover{
+    
+    
+}
+*/
+
+
+.acordeonMore .triggerMore{
+    font-size: 1rem;
+    font-weight: 70;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5 rem;
+    background-color: transparent;
+    /* color: #fff; */
+    border: none;
+    
+}
+
+.theme.dark .acordeonMore .triggerMore p{
+    
+    margin: 0;
+    text-align: start;
+    color: white;
+}
+
+.acordeonMore .triggerMore:hover{
+    cursor: pointer;
+
+}
+
+.theme.dark .acordeonMore .triggerMore:hover p{
+
+    color:cyan;
+}
+
+.theme.light .acordeonMore .triggerMore:hover p{
+
+    color:yellow;
+}
+
+.acordeonMore .triggerMore::after{
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-image: url('../images/icons/arrow.svg'); */
+    transition: .25s;
+
+}
+
+.acordeonMore .contentMore{    
+    overflow: hidden ;
+    height: 0;
+    opacity: 0;
+    transition: .25s  opacity ease-in-out ;    
+}
+
+.acordeonMore.open .contentMore{
+    display: block;
+    overflow: visible;
+    height: auto;
+    opacity: 1;
+    padding: 0.5rem 1rem 1rem 2rem;
+}

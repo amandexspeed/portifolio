@@ -1,0 +1,156 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .photo{
+    width: 200px;
+    height: 220px;
+    border-radius: 50%;
+}
+
+.header .title {
+    text-align: center;
+    font-family: 'Neue Machine';
+}
+
+.information {    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.information p {  
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    margin: .5rem;
+    font-size: 1.125rem;
+ }
+
+ .information p::before {   
+    content:'';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: .5rem;
+ }
+
+ .information .job::before {
+    background-image: url('../images/icons/job.svg');
+ }
+
+ .information .location::before {
+    background-image: url('../images/icons/location.svg');
+ }
+
+ .information .email::before {
+    background-image: url('../images/icons/email.svg');
+ }
+
+ .information .phone::before {
+    background-image: url('../images/icons/phone.svg');
+ }
+
+ .theme .triggerTheme .icon{
+
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+ }
+
+
+ .theme.dark .triggerTheme{
+
+    background-image: url(../images/icons/sol.png);
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+ }
+
+ .theme.light .triggerTheme{
+
+    background-image: url(../images/icons/lua.png);
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+ }
+
+ .theme.dark .triggerTheme:hover {
+
+    border:2px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 5px;
+
+ }
+
+ .theme.light .triggerTheme:hover{
+
+    border:2px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+
+ }
+ .theme .triggerTheme:hover {
+
+    padding: 2px;
+    margin: 2px;
+
+ }
+
+
+ @media only screen and (min-width:768px){
+    .header{        
+        display: grid; 
+        grid-template-areas: 
+        "photo title theme"
+        "photo information information"
+        ;       
+    }
+
+   .header .photo{        
+        grid-area: photo;
+        margin: 0 auto;       
+    }
+
+    .header .title{        
+        grid-area: title;       
+        text-align: start;
+        max-width: 200px;
+    }
+
+    .header .information{        
+        grid-area: information;       
+    }
+
+    .triggerTheme{
+
+      grid-area: theme;
+      width:50px;
+      height: 50px;
+      align-items: center;
+      justify-items: center;
+      background:none;
+      border: none;
+      
+
+    }
+
+ }

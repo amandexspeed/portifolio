@@ -1,0 +1,106 @@
+.acordeon{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 1rem;
+    margin:1rem 0;
+    transition: .25s;
+}
+
+.theme.dark .acordeon.open,
+.theme.dark .acordeon:hover{
+    background-color: #55569e;
+    border-color: #55569e;
+} 
+
+.theme.light .acordeon.open,
+.theme.light .acordeon:hover{
+    background-color: #418aa7;
+    border-color: #418aa7;
+} 
+
+.acordeon .trigger{
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: none;
+    
+}
+
+.theme.dark .acordeon .trigger{
+
+    color: #fff; 
+ 
+    
+}
+
+.theme.light .acordeon .trigger{
+
+    color: "black"; 
+
+    
+}
+
+
+.acordeon .trigger p{
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: start;
+}
+
+.acordeon .trigger:hover{
+    cursor: pointer;
+}
+
+.theme.dark .acordeon .trigger::after{
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../images/icons/arrow.svg');
+    transition: .25s;
+
+}
+
+.theme.dark .acordeon.open .trigger::after{
+    transform: rotate(180deg);
+}
+
+.theme.light .acordeon .trigger::after{
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../images/icons/arrow black.png');
+    transition: .25s;
+
+}
+
+.theme.light .acordeon.open .trigger::after{
+    transform: rotate(180deg);
+}
+
+
+.acordeon .content{    
+    overflow: hidden ;
+    height: 0;
+    opacity: 0;
+    transition: .25s  opacity ease-in-out ;    
+}
+
+.acordeon.open .content{
+    display: block;
+    height: auto;
+    opacity: 1;
+    padding: 0 1rem 1rem 2rem;
+}

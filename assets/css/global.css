@@ -1,0 +1,115 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.main{
+
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+
+}
+
+.theme.dark .main{
+
+    border: 1px solid white;
+
+}
+
+.theme.light .main{
+
+    border: 1px solid purple;
+
+}
+
+.main::before{
+
+    content: '';
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140vw;
+    height: 100vh;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:-1;
+
+}
+
+.main::after{
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140vw;
+    height: 100vh;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transform: rotate(180deg);
+
+}
+
+
+.theme.dark{
+        background-color: black;
+        color: white;
+}
+
+.theme.light{
+
+    background-color: white;
+    color: black;
+
+}
+
+.theme.dark a{
+
+    color: white;
+    text-decoration: none;
+}
+
+.theme.dark a:hover{
+
+    color: white;
+    text-decoration: underline;
+
+}
+
+.theme.light a{
+
+    color: black;
+    text-decoration: none;
+}
+
+.theme.light a:hover{
+
+    color: black;
+    text-decoration: underline;
+
+}
+
+
+@media only screen and (min-width:768px){
+
+    .main{
+
+        max-width: 1024px;
+        margin: 1rem auto;
+
+    }
+
+    .main::before,.main::after{
+
+        width: 70vw;
+    }
+
+}
+
