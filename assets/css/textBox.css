@@ -214,6 +214,15 @@
 }
 }
 
+ @media only screen and (max-width:768px){
+
+     .socialMedia{
+
+         flex-direction: column;
+     }
+     
+ }
+
 .Personal{
 
     font-size: 1.2rem;
