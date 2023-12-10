@@ -67,15 +67,12 @@ TriggerTheme.forEach((trigger)=>{
 
 function loadingTheme(){
 
-    let darkMode = window.matchMedia ("(prefers-color-scheme: dark)");
+    let lightMode = window.matchMedia ("(prefers-color-scheme: light)");
     let theme = document.querySelector(".theme");
 
-    if (darkMode.matches  && !(theme.classList.contains('dark'))) {
+    if (lightMode.matches) {
 
-        theme.classList.add('dark');
-
-    } else {
-
+        theme.classList.remove('dark');
         theme.classList.add('light');
     
     }
