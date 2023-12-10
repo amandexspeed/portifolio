@@ -171,13 +171,20 @@
 .socialMedia{
 
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-content: center;
 
 
 }
 
+@media only screen and (min-width:768px){
+
+.socialMedia{
+
+    flex-direction: row;
+
+}
+    
 .socialMedia li{
 
 
@@ -204,6 +211,7 @@
     justify-content: center;
     align-content: center;
 
+}
 }
 
 .Personal{
