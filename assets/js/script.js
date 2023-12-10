@@ -52,46 +52,32 @@ TriggerTheme.forEach((trigger)=>{
 
         if(isDark){
 
-            /* body.style.color = "black";
-            body.style.backgroundColor = "white";
-            
-
-            let links = document.getElementsByTagName("a");
-
-            for (var i = 0; i < links.length; i++) {
-            links[i].style.color = "black";
-            }
-            
-            let acordeon = document.getElementsByClassName(".acordeon");
-            for (var i = 0; i < acordeon.length; i++) {
-                acordeon[i].style.color = "black";
-            }
-             */
             theme.classList.remove('dark');
             theme.classList.add('light');
 
         }else{
-
-            
-            /* body.style.backgroundColor = "black";
-
-            var links = document.getElementsByTagName("a");
-            body.style.color = "white";
-            for (var i = 0; i < links.length; i++) {
-            links[i].style.color = "white";
-            }
-
-            let acordeon = document.getElementsByClassName(".acordeon h2");
-            for (var i = 0; i < acordeon.length; i++) {
-                acordeon[i].style.color = "white";
-            } */
 
             theme.classList.remove('light');
             theme.classList.add('dark');
 
         }
 
-
-
     })
 })
+
+function loadingTheme(){
+
+    let darkMode = window.matchMedia ("(prefers-color-scheme: dark)");
+    let theme = document.querySelector(".theme");
+
+    if (darkMode.matches) {
+
+        theme.classList.add('dark');
+
+    } else {
+
+        theme.classList.add('light');
+    
+    }
+
+}
