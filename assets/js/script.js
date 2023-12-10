@@ -70,7 +70,7 @@ function loadingTheme(){
     let darkMode = window.matchMedia ("(prefers-color-scheme: dark)");
     let theme = document.querySelector(".theme");
 
-    if (darkMode.matches) {
+    if (darkMode.matches  && !(theme.classList.contains('dark'))) {
 
         theme.classList.add('dark');
 
