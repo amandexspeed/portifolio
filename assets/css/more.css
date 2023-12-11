@@ -80,3 +80,60 @@
     opacity: 1;
     padding: 0.5rem 1rem 1rem 2rem;
 }
+
+/* Define o estilo da imagem */
+.acordeonMore img{
+    width: 50vw;
+    height: 50vh;
+    border: 2px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  /* Define o estilo da janela modal */
+  .modal {
+    display: none; /* Esconde a janela modal por padrão */
+    position: fixed; /* Fixa a posição da janela modal */
+    z-index: 1; /* Coloca a janela modal acima de todo o conteúdo */
+    left: 0; /* Alinha a janela modal à esquerda */
+    top: 0; /* Alinha a janela modal ao topo */
+    width: 100%; /* Define a largura da janela modal */
+    height: 100%; /* Define a altura da janela modal */
+    overflow: auto; /* Habilita o scroll se o conteúdo for maior que a janela modal */
+    background-color: rgba(0,0,0,0.4); /* Adiciona um fundo preto transparente */
+  }
+  
+  /* Define o estilo do conteúdo da janela modal */
+  .modal-content {
+    margin: 7% auto;  /*Centraliza o conteúdo da janela modal  */
+    width: 80vw; /* Define a largura do conteúdo da janela modal */
+    height: 80vh;
+    background-color: white; /* Define a cor de fundo do conteúdo da janela modal */
+    border-radius: 5px; /* Arredonda as bordas do conteúdo da janela modal */
+    display: flex; /* Usa o display flex para alinhar o conteúdo da janela modal */
+    justify-content: center; /* Centraliza o conteúdo da janela modal horizontalmente */
+    align-items: center; /* Centraliza o conteúdo da janela modal verticalmente */
+  }
+
+  .modal-content img{
+
+    width: 70vw; /* Define a largura do conteúdo da janela modal */
+    height: 70vh;
+
+  }
+  
+  /* Define o estilo do botão de fechar a janela modal */
+  .close {
+    position: absolute; /* Posiciona o botão de fechar a janela modal */
+    top: 10px; /* Define a distância do botão de fechar ao topo da janela modal */
+    right: 10px; /* Define a distância do botão de fechar à direita da janela modal */
+    color: white; /* Define a cor do botão de fechar */
+    font-size: 32px; /* Define o tamanho da fonte do botão de fechar */
+    font-weight: bold; /* Define o peso da fonte do botão de fechar */
+    cursor: pointer; /* Define o cursor do botão de fechar */
+  }
+  
+  /* Define o estilo do botão de fechar a janela modal quando o mouse passa sobre ele */
+  .close:hover {
+    color: red; /* Muda a cor do botão de fechar para vermelho */
+  }

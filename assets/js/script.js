@@ -20,19 +20,48 @@ var acoordeonMoreTriggers = document.querySelectorAll('.acordeonMore .triggerMor
 acoordeonMoreTriggers.forEach((trigger)=>{
     trigger.addEventListener('click',(e)=>{
         let acordeon = trigger.parentElement
-        var texto = acordeon.querySelector(".Info") 
+
+        let textExists = acordeon.classList.contains(".Info")
+        var texto;
+
+        if (textExists){
+
+            texto = acordeon.querySelector(".Info") 
+
+        }else{
+            
+            texto = acordeon.querySelector(".Img") 
+
+        }
 
         let isOpen = acordeon.classList.contains('open')
         if (isOpen){
 
             acordeon.classList.remove('open')
-            texto.textContent = "Mais informações"
 
+            if(textExists){
+
+                texto.textContent = "Mais informações"
+
+            }else{
+
+                texto.textContent = "Mostrar print"
+
+            }
 
         }else{
 
            acordeon.classList.add('open')    
-           texto.textContent = "Menos informações" 
+           
+           if(textExists){
+
+            texto.textContent = "Menos informações"
+
+            }else{
+
+                texto.textContent = "Ocultar print"
+
+            }
         
         }
 
@@ -78,3 +107,20 @@ function loadingTheme(){
     }
 
 }
+
+// Define uma função que é chamada quando a imagem é clicada
+function openModal(id) {
+    // Obtém o elemento da janela modal pelo seu id
+    var modal = document.getElementById(id);
+    // Muda o estilo da janela modal para display: block, tornando-a visível
+    modal.style.display = "block";
+  }
+  
+  // Define uma função que é chamada quando o botão de fechar é clicado
+  function closeModal(id) {
+    // Obtém o elemento da janela modal pelo seu id
+    var modal = document.getElementById(id);
+    // Muda o estilo da janela modal para display: none, tornando-a invisível
+    modal.style.display = "none";
+  }
+  
