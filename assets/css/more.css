@@ -83,8 +83,6 @@
 
 /* Define o estilo da imagem */
 .acordeonMore img{
-    width: 50vw;
-    height: 50vh;
     border: 2px solid black;
     border-radius: 15px;
     cursor: pointer;
@@ -105,9 +103,6 @@
   
   /* Define o estilo do conteúdo da janela modal */
   .modal-content {
-    margin: 7% auto;  /*Centraliza o conteúdo da janela modal  */
-    width: 80vw; /* Define a largura do conteúdo da janela modal */
-    height: 80vh;
     background-color: white; /* Define a cor de fundo do conteúdo da janela modal */
     border-radius: 5px; /* Arredonda as bordas do conteúdo da janela modal */
     display: flex; /* Usa o display flex para alinhar o conteúdo da janela modal */
@@ -115,12 +110,7 @@
     align-items: center; /* Centraliza o conteúdo da janela modal verticalmente */
   }
 
-  .modal-content img{
-
-    width: 70vw; /* Define a largura do conteúdo da janela modal */
-    height: 70vh;
-
-  }
+  
   
   /* Define o estilo do botão de fechar a janela modal */
   .close {
@@ -136,4 +126,56 @@
   /* Define o estilo do botão de fechar a janela modal quando o mouse passa sobre ele */
   .close:hover {
     color: red; /* Muda a cor do botão de fechar para vermelho */
+  }
+
+  @media only screen and (min-width:768px){
+
+    .modal-content img{
+
+        width: 70vw; /* Define a largura do conteúdo da janela modal */
+        height: 70vh;
+    
+    }
+    .acordeonMore img{
+        width: 50vw;
+        height: 50vh;
+    }
+
+    .modal-content {
+        margin: 7% auto;  /*Centraliza o conteúdo da janela modal  */
+        width: 80vw; /* Define a largura do conteúdo da janela modal */
+        height: 80vh;
+    }
+
+  }
+
+  @media only screen and (max-width:768px){
+
+    
+    .acordeonMore img{
+        
+        width: 50vw;
+        height: 50vh; 
+
+    }
+
+    .modal-content {
+
+        width: 70vh;
+        height: 70vh;
+        /* margin: 7% auto;  Centraliza o conteúdo da janela modal  */
+        /*width: 90vw;  Define a largura do conteúdo da janela modal */
+        /*height: 90vh; */
+    }
+
+    .modal-content img{
+
+        width: fit-content;
+        height: fit-content;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        /*width: 100%; Define a largura do conteúdo da janela modal */
+        /*height: 100%; */
+    }
   }
