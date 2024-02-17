@@ -20,48 +20,19 @@ var acoordeonMoreTriggers = document.querySelectorAll('.acordeonMore .triggerMor
 acoordeonMoreTriggers.forEach((trigger)=>{
     trigger.addEventListener('click',(e)=>{
         let acordeon = trigger.parentElement
+        var texto = acordeon.querySelector(".Info") 
 
-        let textExists = acordeon.classList.contains(".Info")
-        var texto;
-
-        if (textExists){
-
-            texto = acordeon.querySelector(".Info") 
-
-        }else{
-            
-            texto = acordeon.querySelector(".Img") 
-
-        }
 
         let isOpen = acordeon.classList.contains('open')
         if (isOpen){
 
             acordeon.classList.remove('open')
-
-            if(textExists){
-
-                texto.textContent = "Mais informações"
-
-            }else{
-
-                texto.textContent = "Mostrar print"
-
-            }
+            texto.textContent = "Mais informações"
 
         }else{
 
            acordeon.classList.add('open')    
-           
-           if(textExists){
-
-            texto.textContent = "Menos informações"
-
-            }else{
-
-                texto.textContent = "Ocultar print"
-
-            }
+           texto.textContent = "Menos informações"
         
         }
 
@@ -108,19 +79,51 @@ function loadingTheme(){
 
 }
 
-// Define uma função que é chamada quando a imagem é clicada
-function openModal(id) {
-    // Obtém o elemento da janela modal pelo seu id
-    var modal = document.getElementById(id);
-    // Muda o estilo da janela modal para display: block, tornando-a visível
-    modal.style.display = "block";
-  }
-  
-  // Define uma função que é chamada quando o botão de fechar é clicado
-  function closeModal(id) {
-    // Obtém o elemento da janela modal pelo seu id
-    var modal = document.getElementById(id);
-    // Muda o estilo da janela modal para display: none, tornando-a invisível
-    modal.style.display = "none";
-  }
+async function carregaPortifolio(){
+
+    const data = await fetch('https://api.github.com/users/amandexspeed/repos').then(response => response.json());
+
+    const lista = document.querySelector('.portfolio');
+
+    data.forEach(Element => {
+
+        if(Element.name != "amandexspeed"){
+            
+            var item = document.createElement('li');
+
+            var h1= document.createElement('h1');
+            h1.textContent = `${Element.name}: ${Element.description}`;
+            h1.setAttribute("class","title github");
+            item.appendChild(h1);
+
+            var p = document.createElement('p');
+            p.textContent = `Linguagem - ${Element.language}`;
+            item.appendChild(p);
+
+            var link = document.createElement('a');
+            link.href = Element.html_url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = "Link Repo";
+            item.appendChild(link);
+
+            if(Element.homepage!=null){
+
+                var link = document.createElement('a');
+                link.href = Element.homepage;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = "Link Site";
+
+                item.appendChild(link);
+
+            }
+            
+            lista.appendChild(item);
+
+        }
+
+    })
+
+}
   
