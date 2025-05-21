@@ -14,6 +14,9 @@ acoordeonTriggers.forEach((trigger)=>{
 })
 
 
+var anoAtual = Date.getFullYear()
+document.getElementById("idade").textContent = anoAtual - 2005;
+
 var acoordeonMoreTriggers = document.querySelectorAll('.acordeonMore .triggerMore')
 
 
